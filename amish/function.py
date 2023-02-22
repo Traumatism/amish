@@ -10,8 +10,7 @@ def function(fnc: Callable) -> Callable[[Stack], None]:
 
     if (
         annotations.get("vm") != Stack
-        or annotations.get("return") != None
-        or (len(annotations.keys()) != 1 and not annotations.get("return"))
+        or len(annotations.keys()) != 1
     ):
         raise Exception("Functions must be defined with: def name(vm: Stack) -> None:")
 
